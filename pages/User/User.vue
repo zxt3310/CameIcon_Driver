@@ -1,6 +1,6 @@
 <template>
 	<view>
-		主线司机
+		我的
 		<my-tab></my-tab>
 	</view>
 </template>

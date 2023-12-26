@@ -1,5 +1,5 @@
 <template>
-	<u-tabbar :value="value" @change="change">
+	<u-tabbar :value="value" @change="change" @click="jump">
 		<u-tabbar-item name="0" text="任务" icon="order"></u-tabbar-item>	
 		<u-tabbar-item name="1" text="我的" icon="account"></u-tabbar-item>
 	</u-tabbar>
@@ -15,8 +15,12 @@
 			
 		},
 		methods:{
+			jump(e){
+				console.log(e)
+			},
 			change(e){
-				console.log(this.user)
+				console.log(e)
+				// console.log(this.user)
 			}
 		}
 	}

@@ -1,7 +1,6 @@
 <template>
 	<view>
-		主线司机
-		<my-tab></my-tab>
+		派送司机
 	</view>
 </template>
 

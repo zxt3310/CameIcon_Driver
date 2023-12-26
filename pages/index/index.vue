@@ -1,13 +1,14 @@
 <template>
 	<view class="content">
-		<MyTabbar></MyTabbar>
+		<!-- <MyTabbar></MyTabbar> -->
+		<u-button type="primary" text="跳转" @click="jump"></u-button>
 	</view>
 </template>
 
 <script>
 	import MyTabbar from "@/component/MyTabbar"
 	export default {
-		components:{
+		components: {
 			MyTabbar
 		},
 		data() {
@@ -15,15 +16,13 @@
 				title: 'Hello'
 			}
 		},
-
-		// computed: {
-		// 	...mapState({
-		// 		userInfo: state => state.user.userInfo
-		// 	})
-		// },
 		onLoad() {},
 		methods: {
-
+			jump(){
+				uni.navigateTo({
+					url:"/page/DriverMain/DriverMain"
+				})
+			}
 		}
 	}
 </script>
