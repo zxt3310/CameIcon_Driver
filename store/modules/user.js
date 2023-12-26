@@ -1,5 +1,8 @@
 const state = {
-	userInfo: { name: '用户呢称' }
+	userInfo: {
+		mobile: "",
+		type: "mian"
+	}
 }
 
 const mutations = {

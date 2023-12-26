@@ -1,29 +1,26 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title u-line-1">是日也，天朗气清，惠风和畅，仰观宇宙之大，俯察品类之盛</text>
-		</view>
-		<view class="">
-			{{userInfo.name}}
-		</view>
+		<MyTabbar></MyTabbar>
 	</view>
 </template>
 
 <script>
-	import { mapState } from "vuex"
+	import MyTabbar from "@/component/MyTabbar"
 	export default {
+		components:{
+			MyTabbar
+		},
 		data() {
 			return {
 				title: 'Hello'
 			}
 		},
 
-		computed: {
-			...mapState({
-				userInfo: state => state.user.userInfo
-			})
-		},
+		// computed: {
+		// 	...mapState({
+		// 		userInfo: state => state.user.userInfo
+		// 	})
+		// },
 		onLoad() {},
 		methods: {
 
