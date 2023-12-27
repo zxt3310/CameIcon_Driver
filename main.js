@@ -11,7 +11,7 @@ Vue.prototype.$store = store
 Vue.use(router)
 Vue.use(uView)
 // 如此配置即可
-uni.$u.config.unit = 'px'
+uni.$u.config.unit = 'upx'
 
 const app = new Vue({
 	...App
