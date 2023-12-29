@@ -1,6 +1,9 @@
 <template>
 	<view>
 		<u-subsection fontSize="26" :list="lines" :current="current" @change="onChange"></u-subsection>
+		<view class="">
+			
+		</view>
 		<MyTabbar :value="0"></MyTabbar>
 	</view>
 </template>
@@ -9,6 +12,7 @@
 	import { mapState } from "vuex"
 	import storage from '@/Tootls/storage.js'
 	import MyTabbar from "@/component/MyTabbar/index.vue"
+	import {getOrder} from "@/api/Order"
 	export default {
 		components:{MyTabbar},
 		computed:{
@@ -26,6 +30,9 @@
 					url:"/pages/Login/Login"
 				})
 			}
+			getOrder().then((res)=>{
+				console.log(res)
+			})
 			
 		},
 		onShow() {
