@@ -2,13 +2,13 @@ import $http from "@/api/requestBase.js"
 
 const api = {
 	//账号密码登录
-	login:"api/v1/login",
+	login:"api/v3/wechat/wldriver/code",
 	//验证码登录
-	smsLogin:"api/v1/login-sms",
+	smsLogin:"api/v3/wechat/wluser/code",
 	//注册
-	register:"api/v1/register",
+	register:"api/v3/wechat/wluser/register",
 	//获取验证码
-	smsCode:"api/v1/get-login-sms-captcha",
+	smsCode:"api/v3/wechat/wluser/code",
 }
 // 使用示例
 export const login = (data) => {
@@ -20,5 +20,9 @@ export const sms_login = (data) => {
 }
 
 export const sms_send_code = (data) =>{
-	return $http.get(api.smsCode,data)
+	return $http.post(api.smsCode,data)
+}
+
+export const register = (data)=>{
+	return $http.post(api.register, data)
 }

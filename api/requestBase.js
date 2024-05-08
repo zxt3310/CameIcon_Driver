@@ -1,7 +1,7 @@
 import request from "@/uni_modules/zhouWei-request/js_sdk/request";
 import storage from "@/Tootls/storage.js"
 // 全局配置的请求域名
-let baseUrl = "http://211.159.178.9/";
+let baseUrl = "https://wl.camelcon.cn/trans/";
 //可以new多个request来支持多个域名请求
 let $http = new request({
 	//接口请求地址
@@ -149,9 +149,11 @@ $http.dataFactory = async function(res) {
 		/*********以下只是模板(及共参考)，需要开发者根据各自的接口返回类型修改*********/
 
 		//判断数据是否请求成功
-		if (httpData.status = "success" || httpData.code == 200) {
+		if (httpData.success) {
 			// 返回正确的结果(then接受数据)
-			return Promise.resolve(httpData.data);
+			//如果是登录接口 则返回整个response 否则只返回业务数据
+			let token = res.response.header.Userauthorization
+			return Promise.resolve(typeof token=="undefined"?httpData:res.response);
 		} else if (httpData.code == "1000" || httpData.code == "1001" || httpData.code == 1100) {
 			let content = '此时此刻需要您登录喔~';
 			if (loginPopupNum <= 0) {

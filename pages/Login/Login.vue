@@ -6,9 +6,9 @@
 
 		<view class="input_box">
 			<u--form :model="model" :rules="rules" ref="uForm">
-				<u-form-item prop="data.username" borderBottom ref="item1">
+				<u-form-item prop="data.mobile" borderBottom ref="item1">
 					<u--input prefixIcon="phone-fill" placeholder="请输入手机号码" border="none"
-						prefixIconStyle="font-size:22px" v-model="model.data.username"></u--input>
+						prefixIconStyle="font-size:22px" v-model="model.data.mobile"></u--input>
 				</u-form-item>
 				<u-form-item prop="data.captcha" borderBottom ref="item2">
 					<u-input prefixIcon="lock-fill" placeholder="请输入验证码" border="none" prefixIconStyle="font-size:22px"
@@ -35,13 +35,13 @@
 				tips: "获取验证码",
 				model: {
 					data: {
-						username: "18072575604",
-						password: "12345678",
-						captcha: "1111",
+						mobile: "15500000000",
+						password: "123456",
+						type:1
 					}
 				},
 				rules: {
-					'data.username': [{
+					'data.mobile': [{
 							type: 'number',
 							required: true,
 							message: '请填写手机号',

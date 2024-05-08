@@ -30,12 +30,13 @@
 					url:"/pages/Login/Login"
 				})
 			}
-			getOrder().then((res)=>{
-				console.log(res)
-			})
+			
 			
 		},
 		onShow() {
+			// getOrder().then((res)=>{
+			// 	console.log(res)
+			// })
 			if(this.$store.state.user.type == "sub"){
 				uni.switchTab({
 					url:"/pages/DriverSub/DriverSub"
